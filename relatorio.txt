@@ -1,0 +1,28 @@
+Relatório de Implementação - Projeto Kafka Fábrica Inteligente (Simples)
+
+O que foi implementado:
+- Cluster Kafka com 2 brokers e 1 Zookeeper via Docker Compose.
+- Sensor Python que envia dados simulados para o tópico `dados-sensores`.
+- Consumidor Python que detecta anomalias de temperatura e loga eventos.
+- Makefile para automação de build, up, down, logs e simulação de falhas.
+
+O que funcionou:
+- Mensagens sendo produzidas e consumidas normalmente.
+- Parada de um broker não interrompe o fluxo de mensagens.
+- Parada do consumidor permite rebalanceamento ao subir outro consumidor (se desejar, basta duplicar o serviço no compose).
+
+O que não funcionou ou ficou de fora:
+- Não há dashboard ou persistência em banco de dados.
+- Não há múltiplos consumidores rodando simultaneamente por padrão.
+- Projeto focado no mínimo viável para entrega rápida.
+
+Como rodar/testar:
+- Siga o README para subir o sistema e simular falhas.
+- Veja os logs para observar o comportamento do sistema.
+
+Arquitetura:
+O sistema é composto por:
+- Um cluster Kafka com 2 brokers e 1 Zookeeper, garantindo tolerância a falhas e replicação dos dados.
+- Sensores simulados em Python, rodando em containers, que enviam dados periódicos para o tópico 'dados-sensores'.
+- Consumidores Python, também em containers, que processam os dados e detectam anomalias. Os consumidores pertencem ao mesmo grupo, permitindo balanceamento automático de carga e failover.
+- O Makefile e scripts permitem simular falhas e observar o rebalanceamento dos consumidores.
