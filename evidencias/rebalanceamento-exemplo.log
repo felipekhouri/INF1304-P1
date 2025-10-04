@@ -1,0 +1,9 @@
+2025-09-19T10:05:12Z Consumidor iniciado. Bootstrap: kafka1:9092,kafka2:9093 | Tópico: dados-sensores | Grupo: grupo-consumidor | Limites: 10.0-80.0
+2025-09-19T10:05:15Z Recebido da partição 0: {"sensor_id": "sensor-17", "temperatura": 42.1, "vibracao": 0.77, "timestamp": 1695117915}
+2025-09-19T10:05:16Z Recebido da partição 1: {"sensor_id": "sensor-88", "temperatura": 79.3, "vibracao": 1.21, "timestamp": 1695117916}
+2025-09-19T10:05:18Z Rebalance: partições revogadas: TopicPartition(topic='dados-sensores', partition=0), TopicPartition(topic='dados-sensores', partition=1), TopicPartition(topic='dados-sensores', partition=2)
+2025-09-19T10:05:18Z Rebalance: partições atribuídas: TopicPartition(topic='dados-sensores', partition=0)
+2025-09-19T10:05:19Z Recebido da partição 0: {"sensor_id": "sensor-7", "temperatura": 85.6, "vibracao": 0.44, "timestamp": 1695117919}
+2025-09-19T10:05:19Z [ALERTA] Anomalia detectada na partição 0: {"sensor_id": "sensor-7", "temperatura": 85.6, "vibracao": 0.44, "timestamp": 1695117919}
+2025-09-19T10:05:22Z Rebalance: partições revogadas: TopicPartition(topic='dados-sensores', partition=0)
+2025-09-19T10:05:22Z Rebalance: partições atribuídas: TopicPartition(topic='dados-sensores', partition=1), TopicPartition(topic='dados-sensores', partition=2)

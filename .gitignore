@@ -86,4 +86,7 @@ temp/
 coverage.xml
 pytestdebug.log
 
+# Evidence logs to include in repo
+!evidencias/*.log
+
 ENUNCIADO.md
