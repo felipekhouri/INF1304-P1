@@ -1,0 +1,96 @@
+consumer-2  | Consumidor iniciado. Bootstrap: kafka1:9092,kafka2:9093 | Tópico: dados-sensores | Grupo: grupo-consumidor | Limites: 10.0-80.0
+consumer-2  | Rebalance: partições revogadas: (nenhuma)
+consumer-2  | Rebalance: partições atribuídas: (nenhuma)
+consumer-2  | Rebalance: partições revogadas: (nenhuma)
+consumer-2  | Rebalance: partições atribuídas: TopicPartition(topic='dados-sensores', partition=0)
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-24', 'temperatura': 10.47, 'vibracao': 8.18, 'timestamp': 1759623926}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-97', 'temperatura': 67.15, 'vibracao': 6.52, 'timestamp': 1759623928}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-61', 'temperatura': 69.32, 'vibracao': 3.74, 'timestamp': 1759623930}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-26', 'temperatura': 72.84, 'vibracao': 1.03, 'timestamp': 1759623932}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-33', 'temperatura': 85.01, 'vibracao': 8.21, 'timestamp': 1759623934}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-49', 'temperatura': 67.51, 'vibracao': 5.55, 'timestamp': 1759623936}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-68', 'temperatura': 54.72, 'vibracao': 9.38, 'timestamp': 1759623938}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-5', 'temperatura': 43.63, 'vibracao': 5.97, 'timestamp': 1759623940}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-88', 'temperatura': 85.13, 'vibracao': 1.3, 'timestamp': 1759623942}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-39', 'temperatura': 25.58, 'vibracao': 9.15, 'timestamp': 1759623944}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-2', 'temperatura': 96.64, 'vibracao': 6.74, 'timestamp': 1759623946}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-10', 'temperatura': 9.86, 'vibracao': 4.87, 'timestamp': 1759623948}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-59', 'temperatura': 10.73, 'vibracao': 0.64, 'timestamp': 1759623950}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-24', 'temperatura': 31.1, 'vibracao': 4.86, 'timestamp': 1759623952}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-38', 'temperatura': 81.46, 'vibracao': 3.7, 'timestamp': 1759623954}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-44', 'temperatura': 70.32, 'vibracao': 6.39, 'timestamp': 1759623956}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-17', 'temperatura': 95.79, 'vibracao': 8.08, 'timestamp': 1759623958}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-18', 'temperatura': 40.33, 'vibracao': 4.39, 'timestamp': 1759623960}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-80', 'temperatura': 68.93, 'vibracao': 8.04, 'timestamp': 1759623962}
+consumer-2  | Recebido da partição 0: {'sensor_id': 'sensor-40', 'temperatura': 98.36, 'vibracao': 6.88, 'timestamp': 1759623964}
+consumer-1  | Consumidor iniciado. Bootstrap: kafka1:9092,kafka2:9093 | Tópico: dados-sensores | Grupo: grupo-consumidor | Limites: 10.0-80.0
+consumer-1  | Rebalance: partições revogadas: (nenhuma)
+consumer-1  | Rebalance: partições atribuídas: TopicPartition(topic='dados-sensores', partition=0)
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-52', 'temperatura': 17.57, 'vibracao': 5.2, 'timestamp': 1759623793}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-17', 'temperatura': 24.72, 'vibracao': 4.69, 'timestamp': 1759623796}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-65', 'temperatura': 32.43, 'vibracao': 7.31, 'timestamp': 1759623798}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-1', 'temperatura': 60.27, 'vibracao': 6.16, 'timestamp': 1759623800}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-16', 'temperatura': 27.46, 'vibracao': 1.96, 'timestamp': 1759623802}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-24', 'temperatura': 14.45, 'vibracao': 8.29, 'timestamp': 1759623804}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-51', 'temperatura': 68.11, 'vibracao': 2.58, 'timestamp': 1759623806}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-98', 'temperatura': 62.07, 'vibracao': 3.27, 'timestamp': 1759623808}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-76', 'temperatura': 79.05, 'vibracao': 3.77, 'timestamp': 1759623810}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-47', 'temperatura': 70.5, 'vibracao': 7.41, 'timestamp': 1759623812}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-9', 'temperatura': 43.36, 'vibracao': 4.35, 'timestamp': 1759623814}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-43', 'temperatura': 15.7, 'vibracao': 8.37, 'timestamp': 1759623816}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-53', 'temperatura': 67.91, 'vibracao': 0.38, 'timestamp': 1759623818}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-41', 'temperatura': 84.5, 'vibracao': 9.45, 'timestamp': 1759623820}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-63', 'temperatura': 62.11, 'vibracao': 6.32, 'timestamp': 1759623822}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-51', 'temperatura': 49.75, 'vibracao': 3.43, 'timestamp': 1759623824}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-34', 'temperatura': 96.66, 'vibracao': 7.61, 'timestamp': 1759623826}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-83', 'temperatura': 86.22, 'vibracao': 8.13, 'timestamp': 1759623828}
+consumer-1  | Rebalance: partições revogadas: TopicPartition(topic='dados-sensores', partition=0)
+consumer-1  | Rebalance: partições atribuídas: TopicPartition(topic='dados-sensores', partition=0)
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-56', 'temperatura': 54.33, 'vibracao': 7.53, 'timestamp': 1759623830}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-65', 'temperatura': 93.23, 'vibracao': 7.32, 'timestamp': 1759623832}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-73', 'temperatura': 77.42, 'vibracao': 5.37, 'timestamp': 1759623834}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-98', 'temperatura': 53.1, 'vibracao': 2.1, 'timestamp': 1759623836}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-96', 'temperatura': 89.95, 'vibracao': 1.55, 'timestamp': 1759623838}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-83', 'temperatura': 91.66, 'vibracao': 7.82, 'timestamp': 1759623840}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-16', 'temperatura': 34.98, 'vibracao': 0.11, 'timestamp': 1759623842}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-71', 'temperatura': 90.11, 'vibracao': 2.35, 'timestamp': 1759623844}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-58', 'temperatura': 20.8, 'vibracao': 1.7, 'timestamp': 1759623846}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-29', 'temperatura': 20.98, 'vibracao': 8.7, 'timestamp': 1759623848}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-47', 'temperatura': 70.92, 'vibracao': 8.31, 'timestamp': 1759623850}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-56', 'temperatura': 73.43, 'vibracao': 2.47, 'timestamp': 1759623852}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-85', 'temperatura': 76.16, 'vibracao': 7.5, 'timestamp': 1759623854}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-39', 'temperatura': 6.79, 'vibracao': 1.55, 'timestamp': 1759623856}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-20', 'temperatura': 42.2, 'vibracao': 0.71, 'timestamp': 1759623858}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-56', 'temperatura': 83.87, 'vibracao': 4.33, 'timestamp': 1759623860}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-16', 'temperatura': 97.04, 'vibracao': 2.11, 'timestamp': 1759623862}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-3', 'temperatura': 49.37, 'vibracao': 3.17, 'timestamp': 1759623864}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-48', 'temperatura': 16.75, 'vibracao': 7.96, 'timestamp': 1759623866}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-48', 'temperatura': 66.21, 'vibracao': 9.01, 'timestamp': 1759623868}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-96', 'temperatura': 28.26, 'vibracao': 9.71, 'timestamp': 1759623870}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-90', 'temperatura': 45.46, 'vibracao': 6.11, 'timestamp': 1759623872}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-12', 'temperatura': 24.87, 'vibracao': 3.71, 'timestamp': 1759623874}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-14', 'temperatura': 49.92, 'vibracao': 3.57, 'timestamp': 1759623876}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-99', 'temperatura': 60.48, 'vibracao': 3.97, 'timestamp': 1759623878}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-32', 'temperatura': 34.85, 'vibracao': 9.38, 'timestamp': 1759623880}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-52', 'temperatura': 68.04, 'vibracao': 6.74, 'timestamp': 1759623882}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-95', 'temperatura': 73.35, 'vibracao': 2.22, 'timestamp': 1759623884}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-68', 'temperatura': 21.29, 'vibracao': 4.48, 'timestamp': 1759623886}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-44', 'temperatura': 90.81, 'vibracao': 5.74, 'timestamp': 1759623888}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-13', 'temperatura': 45.78, 'vibracao': 8.52, 'timestamp': 1759623890}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-92', 'temperatura': 15.35, 'vibracao': 6.05, 'timestamp': 1759623892}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-80', 'temperatura': 17.16, 'vibracao': 4.95, 'timestamp': 1759623894}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-88', 'temperatura': 82.86, 'vibracao': 5.71, 'timestamp': 1759623896}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-77', 'temperatura': 75.16, 'vibracao': 8.89, 'timestamp': 1759623898}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-11', 'temperatura': 89.52, 'vibracao': 5.35, 'timestamp': 1759623900}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-41', 'temperatura': 54.15, 'vibracao': 0.46, 'timestamp': 1759623902}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-49', 'temperatura': 35.48, 'vibracao': 4.05, 'timestamp': 1759623904}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-59', 'temperatura': 95.48, 'vibracao': 0.16, 'timestamp': 1759623906}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-85', 'temperatura': 14.86, 'vibracao': 5.05, 'timestamp': 1759623908}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-74', 'temperatura': 98.87, 'vibracao': 2.75, 'timestamp': 1759623910}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-70', 'temperatura': 19.13, 'vibracao': 6.77, 'timestamp': 1759623912}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-4', 'temperatura': 36.92, 'vibracao': 8.34, 'timestamp': 1759623914}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-50', 'temperatura': 54.45, 'vibracao': 7.46, 'timestamp': 1759623916}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-9', 'temperatura': 95.32, 'vibracao': 8.54, 'timestamp': 1759623918}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-85', 'temperatura': 89.16, 'vibracao': 5.34, 'timestamp': 1759623920}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-31', 'temperatura': 45.85, 'vibracao': 5.55, 'timestamp': 1759623922}
+consumer-1  | Recebido da partição 0: {'sensor_id': 'sensor-63', 'temperatura': 14.57, 'vibracao': 3.7, 'timestamp': 1759623924}

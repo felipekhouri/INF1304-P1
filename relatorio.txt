@@ -1,79 +1,8 @@
-Relatório de Implementação - Projeto Kafka Fábrica Inteligente (Simples)
+Relatório consolidado no README
 
-============================
-1. Documentação de Instalação e Uso
-============================
-- Requisitos: Docker e Docker Compose.
-- Passos:
-	1) make build
-	2) make up
-	3) ./cria-topico.sh (cria o tópico `dados-sensores` com 3 partições e replicação 2)
-- Configuração: via variáveis de ambiente no docker-compose.yml
-	- KAFKA_BOOTSTRAP_SERVERS, TOPIC (sensor/consumer)
-	- GROUP_ID, TEMP_MIN, TEMP_MAX (consumer)
-- Simulação de falhas: Makefile (targets stop/start) e script ./scripts/simula-falhas.sh
+Para evitar duplicidade e manter uma única fonte de verdade, o relatório completo (instalação/uso, arquitetura, testes de falha, evidências, decisões e próximos passos) foi incorporado ao README, na seção "Relatório (consolidado)".
 
-============================
-2. Arquitetura
-============================
-- Zookeeper + 2 brokers Kafka (kafka1, kafka2) com fator de replicação do tópico = 2.
-- Produtor Python (sensor) em container enviando JSON com {sensor_id, temperatura, vibracao, timestamp} para `dados-sensores` a cada 2s.
-- Consumidor Python em container no GROUP_ID configurável, com detecção de anomalias (TEMP_MIN, TEMP_MAX) e logging em arquivo.
-- Balanceamento de carga: múltiplos consumidores no mesmo grupo compartilham partições; falhas geram rebalanceamento automático.
-
-============================
-3. Testes de Falha (Procedimentos)
-============================
-3.1. Failover de Broker
-- Passos:
-	a) Subir o ambiente (make up)
-	b) Criar o tópico (./cria-topico.sh)
-	c) Parar um broker: make stop-broker1 (ou broker2)
-	d) Observar que o sistema continua operando; mensagens continuam fluindo
-	e) Reiniciar broker: make start-broker1
-- Resultado esperado: produção/consumo seguem ativos; nenhum erro fatal.
-
-3.2. Rebalanceamento de Consumidores
-- Passos:
-	a) Duplicar o serviço consumer no docker-compose.yml como consumer2 ou executar `docker-compose run --rm consumer`
-	b) Observar logs: partições atribuídas entre consumidores
-	c) Parar um consumidor (make stop-consumer ou docker stop <container>)
-	d) Observar logs com eventos de "Rebalance" e nova atribuição de partições ao consumidor restante
-- Resultado esperado: reassignment de partições sem perda do serviço.
-
-============================
-4. Exibição dos Resultados (Evidências)
-============================
-- Logs de consumidor exibem:
-	- Mensagens recebidas com a partição: "Recebido da partição X: {...}"
-	- Alertas de anomalia gravados em consumer/alertas.log
-	- Eventos de rebalanceamento: "Rebalance: partições revogadas/atribuídas: ..."
-- Com script `./scripts/simula-falhas.sh`, os eventos de rebalance aparecem imediatamente após stop/start dos serviços.
-
-============================
-5. O que funcionou
-============================
-- Cluster Kafka com replicação; tolerância a falhas de um broker.
-- Produção e consumo contínuos; detecção de anomalias.
-- Rebalanceamento automático entre consumidores no mesmo grupo.
-
-============================
-6. O que não funcionou / Limitações
-============================
-- Sem persistência em banco de dados; apenas logs.
-- Sem dashboard/monitoramento (ex.: Grafana/Prometheus) por simplicidade.
-- Sem TLS/autenticação no Kafka (ambiente de laboratório).
-
-============================
-7. Decisões de Design
-============================
-- Uso de variáveis de ambiente para evitar hard-code (atende às dicas do enunciado).
-- `kafka-python` pela simplicidade para o escopo do trabalho.
-- Tópico com 3 partições para evidenciar balanceamento entre 2 consumidores.
-
-============================
-8. Próximos Passos (Melhorias sugeridas)
-============================
-- Adicionar persistência (ex.: Postgres/InfluxDB) para armazenar eventos.
-- Incluir ferramentas de observabilidade (Prometheus + Grafana, Kafka UI).
-- Adicionar testes automatizados e pipeline CI.
+Referências diretas:
+- Evidência de rebalance: `evidencias/rebalance-20251004-2138.log`
+- Alertas gerados em runtime: `consumer/alertas.log`
+- Instruções de execução e simulação de falhas: README.md (seções Instalação, Como simular falhas e Relatório)

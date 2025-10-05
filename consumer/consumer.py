@@ -12,10 +12,10 @@ Configuração via variáveis de ambiente (evita hard-code):
 - TEMP_MIN: limite inferior da faixa normal de temperatura (default: 10).
 - TEMP_MAX: limite superior da faixa normal de temperatura (default: 80).
 """
+import os, json, time, logging
 from kafka import KafkaConsumer
-import json
-import os
-import logging
+from kafka.consumer.subscription_state import ConsumerRebalanceListener
+from kafka.errors import NoBrokersAvailable
 
 KAFKA_BOOTSTRAP_SERVERS = os.getenv('KAFKA_BOOTSTRAP_SERVERS', 'localhost:9092')
 TOPIC = os.getenv('TOPIC', 'dados-sensores')
@@ -26,7 +26,7 @@ TEMP_MAX = float(os.getenv('TEMP_MAX', '80'))
 # Configura logger para salvar alertas
 logging.basicConfig(filename='alertas.log', level=logging.INFO, format='%(asctime)s %(message)s')
 
-class RebalanceLogger:
+class RebalanceLogger(ConsumerRebalanceListener):
     """Listener para logar eventos de rebalanceamento de partições."""
 
     def on_partitions_revoked(self, revoked):
@@ -41,13 +41,27 @@ class RebalanceLogger:
         print(msg)
         logging.info(msg)
 
-consumer = KafkaConsumer(
-    bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS.split(','),
-    value_deserializer=lambda m: json.loads(m.decode('utf-8')),
-    group_id=GROUP_ID,
-    auto_offset_reset='earliest',
-    enable_auto_commit=True
-)
+def build_consumer():
+    while True:
+        try:
+            c = KafkaConsumer(
+                bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS.split(','),
+                value_deserializer=lambda m: json.loads(m.decode('utf-8')),
+                group_id=GROUP_ID,
+                auto_offset_reset='earliest',
+                enable_auto_commit=True,
+                request_timeout_ms=30000,
+                retry_backoff_ms=1000,
+                metadata_max_age_ms=5000,
+            )
+            # força contato com o cluster
+            _ = c.topics()
+            return c
+        except NoBrokersAvailable:
+            print("Aguardando brokers Kafka ficarem disponíveis...")
+            time.sleep(2)
+
+consumer = build_consumer()
 consumer.subscribe([TOPIC], listener=RebalanceLogger())
 
 def detect_anomaly(data):
@@ -65,9 +79,6 @@ if __name__ == '__main__':
     for msg in consumer:
         data = msg.value
         part = msg.partition
+        print(f"Recebido da partição {part}: {data}")
         if detect_anomaly(data):
-            alerta = f"[ALERTA] Anomalia detectada na partição {part}: {data}"
-            print(alerta)
-            logging.info(alerta)
-        else:
-            print(f"Recebido da partição {part}: {data}")
+            logging.info(f"ALERTA: anomalia detectada na partição {part}: {data}")
